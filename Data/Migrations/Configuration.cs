@@ -1,6 +1,8 @@
 namespace Data.Migrations
 {
+    using MyFinance.Domain.Entities;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -15,10 +17,13 @@ namespace Data.Migrations
 
         protected override void Seed(Data.MyFinanceContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            var listCategories = new List<Category>{
+                new Category{Name="Meds" },
+                new Category{Name="Clothing" },
+                new Category{Name="Furniture" },
+            };
+            context.Categories.AddRange(listCategories);
+            context.SaveChanges();
         }
     }
 }
