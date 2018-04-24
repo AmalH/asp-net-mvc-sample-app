@@ -21,7 +21,7 @@ namespace MyFinance.Domain.Entities
         
         public int Quantity { get;  set; }
         
-        public string ImageName { get; set; }
+       public string ImageName { get; set; }
 
 
         [Display(Name = "Production Date")]

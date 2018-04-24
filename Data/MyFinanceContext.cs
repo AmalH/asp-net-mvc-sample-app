@@ -10,8 +10,9 @@ namespace Data
 {
     public class MyFinanceContext : DbContext
     {
-        public MyFinanceContext() : base("Name=DefaultConnection")
+        public MyFinanceContext() : base("Name=DefaultConnection")  
         {
+            Database.SetInitializer<MyFinanceContext>(new MyFinanceContextInitializer());
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -24,11 +25,10 @@ namespace Data
             protected override void Seed(MyFinanceContext context)
             {
                 var listCategories = new List<Category>{
-                new Category{Name="Medicament" },
-                new Category{Name="Vetement" },
-                new Category{Name="Meuble" },
+                new Category{Name="Meds" },
+                new Category{Name="Clothing" },
+                new Category{Name="Furniture" },
             };
-
                 context.Categories.AddRange(listCategories);
                 context.SaveChanges();
             }
