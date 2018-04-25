@@ -15,15 +15,15 @@ namespace MyFinance.Domain.Entities
 
         public string UserName { get; set; }
 
-
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
         [MinLength(8)]
         public string Password { get; set; }
 
-        [NotMapped]   // not mapped in the database
+        [NotMapped]
         [Required(ErrorMessage = "Confirm Password is required")]
         [DataType(DataType.Password)]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "Les mots de passes ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
 
         [Required, EmailAddress]

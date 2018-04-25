@@ -1,4 +1,5 @@
-﻿using MyFinance.Domain.Entities;
+﻿using Data.Configurations;
+using MyFinance.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -33,6 +34,16 @@ namespace Data
                 context.SaveChanges();
             }
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //If you want to remove all Convetions and work only with configuration :
+            //  modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+            modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new ProductConfiguration());
+            modelBuilder.Configurations.Add(new AddressConfiguration());
+        }
+
 
 
     }

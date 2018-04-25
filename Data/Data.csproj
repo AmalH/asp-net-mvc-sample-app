@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201804242115199_ModifyImageName.Designer.cs">
       <DependentUpon>201804242115199_ModifyImageName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804250110012_annotationsAdded.cs" />
+    <Compile Include="Migrations\201804250110012_annotationsAdded.Designer.cs">
+      <DependentUpon>201804250110012_annotationsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyFinanceContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804242115199_ModifyImageName.resx">
       <DependentUpon>201804242115199_ModifyImageName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804250110012_annotationsAdded.resx">
+      <DependentUpon>201804250110012_annotationsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
