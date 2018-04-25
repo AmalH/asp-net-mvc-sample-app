@@ -1,4 +1,5 @@
 ﻿using Data.Configurations;
+using Data.CustomConventions;
 using MyFinance.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ namespace Data
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new AddressConfiguration());
+            modelBuilder.Conventions.Add(new DateTime2Convention());
         }
 
 
