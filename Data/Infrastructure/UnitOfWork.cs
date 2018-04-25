@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Infrastructure
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
         private MyFinanceContext dataContext;
@@ -38,7 +38,6 @@ namespace Data.Infrastructure
             return repo;
         }
 
-
-
     }
+
 }
