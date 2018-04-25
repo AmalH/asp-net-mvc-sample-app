@@ -39,7 +39,7 @@ namespace Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //If you want to remove all Convetions and work only with configuration :
-            //  modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+            // modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new AddressConfiguration());
