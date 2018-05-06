@@ -1,4 +1,6 @@
-﻿namespace Data.Infrastructure
+﻿using System;
+
+namespace Data.Infrastructure
 {
     public interface IDatabaseFactory : IDisposable
     {

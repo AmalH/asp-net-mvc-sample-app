@@ -12,6 +12,7 @@ namespace Data.Infrastructure
         private MyFinanceContext dataContext;
 
         IDatabaseFactory dbFactory;
+
         public UnitOfWork(IDatabaseFactory dbFactory)
         {
             this.dbFactory = dbFactory;
@@ -38,6 +39,10 @@ namespace Data.Infrastructure
             return repo;
         }
 
+        void IUnitOfWork.CommitAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

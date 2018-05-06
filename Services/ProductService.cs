@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class ProductService : Service<Product>, IProductService
+    public class ProductService : Service<Product> 
+        // IProductService
     {
 
 
@@ -18,10 +19,8 @@ namespace Services
         public ProductService()
            : base(ut)
         {
-
-
-
         }
     }
+
 
 }
