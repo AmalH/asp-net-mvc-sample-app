@@ -99,5 +99,42 @@ namespace MyFinance.Console
             chirurgienService.Commit();
             System.Console.ReadLine();
         }
+
+
+        public void finalTest()
+        {
+            Operation op = new Operation();
+            // Personnel p =ch1.GetById(ch.CodePersonnel);
+
+            //// Personnel p1 = new Personnel();
+
+            op.DateDebut = new DateTime(2016, 1, 1, 12, 00, 00);
+            op.DateFin = new DateTime(2016, 1, 1, 13, 40, 00);
+            op.Reussi = false;
+            op.Duree = Int32.Parse((op.DateFin - op.DateDebut).TotalMinutes.ToString());
+            op.PatientId = 1;
+            op.Personnels.Add(ch);
+            IOperationService OP = new OperationServices();
+            OP.Add(op);
+
+            OP.Commit();
+            Operation a = OP.GetById(op.OperationId);
+            Operation oo = OP.Get(c => c.Reussi);
+            int b = a.Personnels.Select(p1 => p1.CodePersonnel).First();
+            Console.WriteLine(b);
+            PersonnelService per = new PersonnelService();
+            //Personnel p = per.GetById(41);
+            Chirurgien ch3 = ch1.Get(c => c.CodePersonnel == b);
+            Console.WriteLine(ch3.CodePersonnel);
+
+            // ch3.NoteXP = +5;
+            // ch1.Update(ch3);
+            //ch1.Commit();
+            foreach (var r in ch1.getChirurgienByOperationReussit())
+            {
+                Console.WriteLine(r.CodePersonnel);
+
+            }
+        }
     }
 }
